@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publication and research project pages for Cong Liu.">
+  <title>Cong Liu | Research Publications</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-hero">
+    <nav class="topbar">
+      <a class="brand" href="#">Cong Liu</a>
+      <div class="nav-links">
+        <a href="#featured">Featured</a>
+        <a href="#publications">Publications</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Research Portfolio</p>
+        <h1>Mixed Reality, Digital Twins, Visual SLAM, and 3D Reconstruction</h1>
+        <p class="lead">
+          A project-page style publication hub for Cong Liu's research outputs, built from local paper PDFs,
+          figures, and thesis publication records.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#publications">View Publications</a>
+          <a class="button" href="assets/papers/ldfe-slam.pdf">Latest Paper</a>
+        </div>
+      </div>
+      <aside class="profile-card" aria-label="Researcher profile">
+        <img src="assets/images/profile.png" alt="Cong Liu profile photo">
+        <div>
+          <h2>Cong Liu</h2>
+          <p>Peng Cheng Laboratory, Shenzhen, China</p>
+          <p class="small">Research themes: industrial digital twins, XR systems, robust visual SLAM, low-light perception, and multi-view stereo.</p>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="featured" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Featured Project</p>
+          <h2>LDFE-SLAM</h2>
+          <p>
+            A light-aware deep front-end for robust visual SLAM under challenging illumination, using
+            enhancement, deep feature detection, and learned matching as a co-designed pipeline.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <img class="feature-image" src="assets/images/ldfe-lowlight.png" alt="Low-light comparison figure from LDFE-SLAM.">
+          <div class="feature-panel">
+            <h3>LDFE-SLAM: Light-Aware Deep Front-End for Robust Visual SLAM under Challenging Illumination</h3>
+            <p class="meta">Cong Liu, You Wang, Weichao Luo, Yanhong Peng · Machines · JCR Q2</p>
+            <p>
+              The method treats low-light degradation as a geometric feature distribution problem. It combines
+              illumination-adaptive enhancement, SuperPoint keypoints, and LightGlue matching to stabilize tracking
+              in severe brightness degradation.
+            </p>
+            <div class="inline-actions">
+              <a class="button primary" href="assets/papers/ldfe-slam.pdf">PDF</a>
+              <a class="button" href="#ldfe-slam">Project Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Published or Accepted</p>
+          <h2>Publications</h2>
+          <p>
+            This list follows the local thesis publication record and separates published or accepted papers from
+            under-review and planned work.
+          </p>
+        </div>
+
+        <div class="paper-list">
+          <article id="bundledslam" class="paper-row no-thumb">
+            <div class="paper-main">
+              <p class="tag">IEEE IAEAC 2024 · EI</p>
+              <h3><a href="paper.html?slug=bundledslam">BundledSLAM: An Accurate Visual SLAM System Using Multiple Cameras</a></h3>
+              <p class="authors">Han Song, Cong Liu*, Huafeng Dai</p>
+              <p>Multiple-camera visual SLAM system for improved accuracy and robustness.</p>
+            </div>
+          </article>
+
+          <article id="stereo-vio-init" class="paper-row no-thumb">
+            <div class="paper-main">
+              <p class="tag">IEEE ACIRS 2024 · EI · Oral</p>
+              <h3><a href="paper.html?slug=stereo-vio-init">Advancements in Translation Accuracy for Stereo Visual-Inertial Initialization</a></h3>
+              <p class="authors">Han Song, Zhongche Qu, Zhi Zhang, Zihan Ye, Cong Liu*</p>
+              <p>Stereo visual-inertial initialization study focused on translation accuracy improvements.</p>
+            </div>
+          </article>
+
+          <article id="gaussian-slam-depth-priors" class="paper-row no-thumb">
+            <div class="paper-main">
+              <p class="tag">CEI 2024 · EI</p>
+              <h3><a href="paper.html?slug=gaussian-slam-depth-priors">Visual SLAM with 3D Gaussian Primitives and Depth Priors Enabling Novel View Synthesis</a></h3>
+              <p class="authors">Zhongche Qu, Zhi Zhang, Cong Liu*, Jianhua Yin</p>
+              <p>Combines 3D Gaussian primitives and depth priors to support SLAM and novel view synthesis.</p>
+            </div>
+          </article>
+
+          <article id="dvp-mvs" class="paper-row">
+            <a class="thumb-link" href="assets/papers/dvp-mvs.pdf"><img src="assets/thumbs/dvp-mvs.jpg" alt="DVP-MVS paper thumbnail."></a>
+            <div class="paper-main">
+              <p class="tag">AAAI 2025 · CCF-A</p>
+              <h3><a href="paper.html?slug=dvp-mvs">DVP-MVS: Synergize Depth-Edge and Visibility Prior for Multi-View Stereo</a></h3>
+              <p class="authors">Zhenlong Yuan, Jinguo Luo, Fei Shen, Zhaoxin Li, Cong Liu, Tianlu Mao, Zhaoqi Wang</p>
+              <p>Multi-view stereo method that integrates depth-edge and visibility priors.</p>
+              <a class="text-link" href="assets/papers/dvp-mvs.pdf">Open PDF</a>
+            </div>
+          </article>
+
+          <article id="msp-mvs" class="paper-row">
+            <a class="thumb-link" href="assets/papers/msp-mvs.pdf"><img src="assets/thumbs/msp-mvs.jpg" alt="MSP-MVS paper thumbnail."></a>
+            <div class="paper-main">
+              <p class="tag">AAAI 2025 · CCF-A</p>
+              <h3><a href="paper.html?slug=msp-mvs">MSP-MVS: Multi-Granularity Segmentation Prior Guided Multi-View Stereo</a></h3>
+              <p class="authors">Zhenlong Yuan, Cong Liu, Fei Shen, Zhaoxin Li, Jinguo Luo, Tianlu Mao, Zhaoqi Wang</p>
+              <p>Multi-view stereo method guided by multi-granularity segmentation priors.</p>
+              <a class="text-link" href="assets/papers/msp-mvs.pdf">Open PDF</a>
+            </div>
+          </article>
+
+          <article id="mr-intelliassist" class="paper-row">
+            <a class="thumb-link" href="assets/papers/mr-intelliassist.pdf"><img src="assets/images/mr-intelliassist.jpg" alt="MR-IntelliAssist project visual."></a>
+            <div class="paper-main">
+              <p class="tag">HCII 2025 · Accepted</p>
+              <h3><a href="paper.html?slug=mr-intelliassist">MR-IntelliAssist: A World Cognition Agent Enabling Adaptive Human-AI Symbiosis in Industry 4.0</a></h3>
+              <p class="authors">Cong Liu, Zhenlong Yuan, You Wang, Yanhua Yin, Weichao Luo*, Zhenyu He*, Xiaojun Liang*</p>
+              <p>Mixed-reality assistant centered on world cognition agents and adaptive human-AI industrial collaboration.</p>
+              <a class="text-link" href="assets/papers/mr-intelliassist.pdf">Open PDF</a>
+            </div>
+          </article>
+
+          <article id="plat" class="paper-row">
+            <a class="thumb-link" href="assets/papers/plat.pdf"><img src="assets/thumbs/plat.jpg" alt="PLAT paper thumbnail."></a>
+            <div class="paper-main">
+              <p class="tag">HCII 2025 · Accepted</p>
+              <h3><a href="paper.html?slug=plat">PLAT: Predictive LLM-Driven Active Teleoperation with Adaptive Vision and Interaction Optimization</a></h3>
+              <p class="authors">Cong Liu, Zhenlong Yuan, You Wang, Yanhua Yin, Weichao Luo*, Zhenyu He*, Xiaojun Liang*</p>
+              <p>Predictive LLM-driven teleoperation framework with adaptive vision and interaction optimization.</p>
+              <a class="text-link" href="assets/papers/plat.pdf">Open PDF</a>
+            </div>
+          </article>
+
+          <article id="operational-twins" class="paper-row">
+            <a class="thumb-link" href="assets/papers/operational-twins.pdf"><img src="assets/thumbs/operational-twins.jpg" alt="Operational Twins paper thumbnail."></a>
+            <div class="paper-main">
+              <p class="tag">HCII 2025 · Accepted</p>
+              <h3><a href="paper.html?slug=operational-twins">From Digital Twins to Operational Twins: Enhancing Real-Time Human-System Interaction and Adaptive Decision Support with DeepSeek R1</a></h3>
+              <p class="authors">Cong Liu, Zhenlong Yuan, You Wang, Yanhua Yin, Weichao Luo*, Zhenyu He*, Xiaojun Liang*</p>
+              <p>Extends digital twins toward operational twins for real-time interaction and adaptive decision support.</p>
+              <a class="text-link" href="assets/papers/operational-twins.pdf">Open PDF</a>
+            </div>
+          </article>
+
+          <article id="ldfe-slam" class="paper-row">
+            <a class="thumb-link" href="assets/papers/ldfe-slam.pdf"><img src="assets/images/ldfe-performance.png" alt="LDFE-SLAM performance figure."></a>
+            <div class="paper-main">
+              <p class="tag">Machines · Published · JCR Q2</p>
+              <h3><a href="paper.html?slug=ldfe-slam">LDFE-SLAM: Light-Aware Deep Front-End for Robust Visual SLAM under Challenging Illumination</a></h3>
+              <p class="authors">Cong Liu, You Wang, Weichao Luo*, Yanhong Peng</p>
+              <p>Robust visual SLAM front-end for challenging illumination using enhancement, SuperPoint, and LightGlue.</p>
+              <a class="text-link" href="assets/papers/ldfe-slam.pdf">Open PDF</a>
+            </div>
+          </article>
+
+          <article id="mr-multitwin" class="paper-row">
+            <a class="thumb-link" href="assets/papers/mr-multitwin.pdf"><img src="assets/images/mr-multitwin-demo.jpg" alt="MR-MultiTwin project visual."></a>
+            <div class="paper-main">
+              <p class="tag">IEEE-CCSSTA 2025 · EI</p>
+              <h3><a href="paper.html?slug=mr-multitwin">MR-MultiTwin: A Mixed Reality Platform for Multi-User Control of Industrial Digital Twins</a></h3>
+              <p class="authors">Cong Liu, Xiaoning Zhang, Xiaojun Liang, Weichao Luo, Zhenyu He*</p>
+              <p>Mixed-reality platform for multi-user control and collaborative interaction with industrial digital twins.</p>
+              <a class="text-link" href="assets/papers/mr-multitwin.pdf">Open PDF</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Under Review and In Preparation</p>
+          <h2>Research Pipeline</h2>
+        </div>
+        <div class="pipeline-grid">
+          <article>
+            <span>Under Review</span>
+            <h3>Why Exclusion-Only Dynamic Handling Fails in Photo-SLAM</h3>
+            <p>ACM Multimedia 2026 submission related to dynamic-scene handling in Photo-SLAM.</p>
+          </article>
+          <article>
+            <span>Writing</span>
+            <h3>Geometry-Guided 3D Gaussian Splatting SLAM for Textureless Environments</h3>
+            <p>Planned for IEEE Transactions on Robotics.</p>
+          </article>
+          <article>
+            <span>Writing</span>
+            <h3>Uncertainty-Aware Textureless 3DGS-SLAM with Structural Constraint Reallocation</h3>
+            <p>Planned for IEEE Robotics and Automation Letters.</p>
+          </article>
+          <article>
+            <span>Planned</span>
+            <h3>Low-Light Photo-SLAM with Exposure-Decoupled Appearance Modeling</h3>
+            <p>Planned for IEEE Transactions on Industrial Informatics.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="figure-strip">
+          <img src="assets/images/wca-framework.png" alt="World Cognition Agent framework.">
+          <img src="assets/images/mr-intelliassist-before-after.png" alt="MR-IntelliAssist before and after figure.">
+          <img src="assets/images/ldfe-trajectory.png" alt="LDFE-SLAM trajectory figure.">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>Cong Liu</h2>
+        <p>Peng Cheng Laboratory, Shenzhen, China</p>
+      </div>
+      <div>
+        <p>Source materials were assembled from local PDFs, figures, and the thesis publication record.</p>
+        <p class="small">Before public release, verify author order, venue names, publication status, and permissions for hosted PDFs.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
