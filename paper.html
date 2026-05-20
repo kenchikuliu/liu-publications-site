@@ -12,46 +12,114 @@
   <script src="paper-data.js"></script>
 </head>
 <body>
-  <header class="site-hero paper-hero">
+  <header class="site-hero project-hero">
     <nav class="topbar">
       <a class="brand" href="index.html">Cong Liu</a>
       <div class="nav-links">
-        <a href="index.html#publications">Publications</a>
         <a href="#abstract">Abstract</a>
+        <a href="#video">Video</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#resources">Resources</a>
         <a href="#citation">Citation</a>
       </div>
     </nav>
-    <div class="paper-title-wrap">
+
+    <div class="project-title-wrap">
       <p class="eyebrow" id="paper-status">Publication</p>
       <h1 id="paper-title">Publication</h1>
       <p class="lead" id="paper-authors"></p>
+      <p class="affiliation" id="paper-affiliation"></p>
       <div class="hero-actions" id="paper-actions"></div>
     </div>
   </header>
 
   <main>
-    <section class="section">
+    <section class="section teaser-section">
       <div class="container">
-        <div class="feature-grid">
-          <img class="feature-image" id="paper-image" src="assets/images/avatar.png" alt="Publication visual.">
-          <div class="feature-panel" id="abstract">
-            <h2>Abstract</h2>
-            <p id="paper-summary"></p>
-            <p class="small">
-              This page was generated from local paper records and available assets. Replace this summary with the
-              official abstract when final publisher metadata is confirmed.
-            </p>
-          </div>
+        <div class="project-media-frame">
+          <img id="paper-teaser" src="assets/images/avatar.png" alt="Project teaser.">
+        </div>
+        <p class="caption" id="paper-teaser-caption">Main project visual extracted from local paper materials.</p>
+      </div>
+    </section>
+
+    <section id="abstract" class="section">
+      <div class="container narrow">
+        <h2>Abstract</h2>
+        <p id="paper-summary"></p>
+        <p class="small">
+          This project page follows the same information structure as the local Nerfies-style template:
+          title, authors, resource buttons, teaser, abstract, video/demo slot, method pipeline, results,
+          resources, and citation. Text can be replaced with the official abstract after final metadata is confirmed.
+        </p>
+      </div>
+    </section>
+
+    <section id="video" class="section alt">
+      <div class="container split">
+        <div>
+          <h2>Video or Demo</h2>
+          <p>
+            Add a project video, Bilibili/YouTube embed, recorded demo, or interactive system walkthrough here.
+            If no video is available, this section acts as a demo placeholder.
+          </p>
+        </div>
+        <div class="video-placeholder">
+          <span>Video / Demo Placeholder</span>
         </div>
       </div>
     </section>
 
-    <section id="citation" class="section alt">
+    <section id="method" class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Citation</p>
-          <h2>Reference</h2>
+          <p class="eyebrow">Pipeline and Architecture</p>
+          <h2>Method</h2>
+          <p>The figure below is selected from extracted paper figures or local project assets.</p>
         </div>
+        <div class="project-media-frame compact">
+          <img id="paper-method" src="assets/images/avatar.png" alt="Method or architecture figure.">
+        </div>
+        <div class="three-col">
+          <article>
+            <h3>1. Problem Setting</h3>
+            <p>Defines the sensing, reconstruction, interaction, or mixed-reality scenario addressed by the paper.</p>
+          </article>
+          <article>
+            <h3>2. Core Pipeline</h3>
+            <p>Highlights the architecture, reasoning loop, visual front-end, or prior-guided reconstruction design.</p>
+          </article>
+          <article>
+            <h3>3. Output</h3>
+            <p>Summarizes the expected system output: reconstruction, localization, decision support, or collaboration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Experiments and Visual Results</p>
+          <h2>Results</h2>
+          <p>Representative figures extracted from the local PDF or provided project media.</p>
+        </div>
+        <div class="result-grid" id="paper-results"></div>
+      </div>
+    </section>
+
+    <section id="resources" class="section">
+      <div class="container narrow">
+        <h2>Resources</h2>
+        <ul class="resource-list" id="paper-resources"></ul>
+        <p class="small" id="paper-resource-note"></p>
+      </div>
+    </section>
+
+    <section id="citation" class="section alt">
+      <div class="container narrow">
+        <h2>Citation</h2>
         <pre class="citation-box"><code id="paper-citation"></code></pre>
       </div>
     </section>
@@ -74,6 +142,19 @@
     const slug = params.get("slug") || "ldfe-slam";
     const paper = (window.PUBLICATIONS || []).find((item) => item.slug === slug);
 
+    function addResource(label, href, description) {
+      const list = document.getElementById("paper-resources");
+      const item = document.createElement("li");
+      const left = document.createElement(href ? "a" : "strong");
+      left.textContent = label;
+      if (href) left.href = href;
+      const right = document.createElement("span");
+      right.textContent = description;
+      item.appendChild(left);
+      item.appendChild(right);
+      list.appendChild(item);
+    }
+
     if (!paper) {
       document.title = "Publication not found | Cong Liu";
       document.getElementById("paper-title").textContent = "Publication not found";
@@ -83,25 +164,56 @@
       document.getElementById("paper-status").textContent = paper.status;
       document.getElementById("paper-title").textContent = paper.title;
       document.getElementById("paper-authors").textContent = paper.authors;
+      document.getElementById("paper-affiliation").textContent = paper.affiliation || "";
       document.getElementById("paper-summary").textContent = paper.summary;
-      document.getElementById("paper-image").src = paper.image;
-      document.getElementById("paper-image").alt = `${paper.title} visual.`;
+      document.getElementById("paper-teaser").src = paper.teaser;
+      document.getElementById("paper-teaser").alt = `${paper.title} teaser.`;
+      document.getElementById("paper-method").src = paper.method || paper.teaser;
+      document.getElementById("paper-method").alt = `${paper.title} method figure.`;
+      document.getElementById("paper-resource-note").textContent = paper.resourceNote || "";
       document.getElementById("paper-citation").textContent = paper.citation;
 
       const actions = document.getElementById("paper-actions");
-      const indexLink = document.createElement("a");
-      indexLink.className = "button";
-      indexLink.href = "index.html#publications";
-      indexLink.textContent = "All Publications";
-      actions.appendChild(indexLink);
-
       if (paper.pdf) {
         const pdfLink = document.createElement("a");
         pdfLink.className = "button primary";
         pdfLink.href = paper.pdf;
-        pdfLink.textContent = "PDF";
-        actions.prepend(pdfLink);
+        pdfLink.textContent = "Paper";
+        actions.appendChild(pdfLink);
       }
+      ["code", "demo", "dataset"].forEach((key) => {
+        if (paper[key]) {
+          const link = document.createElement("a");
+          link.className = "button";
+          link.href = paper[key];
+          link.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+          actions.appendChild(link);
+        }
+      });
+      const allLink = document.createElement("a");
+      allLink.className = "button";
+      allLink.href = "index.html#publications";
+      allLink.textContent = "All Publications";
+      actions.appendChild(allLink);
+
+      const results = document.getElementById("paper-results");
+      (paper.results || []).forEach((src, index) => {
+        const figure = document.createElement("figure");
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = `${paper.title} result ${index + 1}.`;
+        const caption = document.createElement("figcaption");
+        caption.textContent = ["Representative result", "Architecture or analysis", "Experimental evidence"][index] || "Project figure";
+        figure.appendChild(img);
+        figure.appendChild(caption);
+        results.appendChild(figure);
+      });
+
+      addResource("Project Page", window.location.href, "Persistent page for this publication.");
+      addResource("Paper PDF", paper.pdf, paper.pdf ? "Local PDF copied from the paper folder." : "PDF not found in the local source folder yet.");
+      addResource("Code", paper.code, paper.code ? "Source repository." : "Code link not configured yet.");
+      addResource("Demo", paper.demo, paper.demo ? "Online or recorded demo." : "Demo link not configured yet.");
+      addResource("Dataset", paper.dataset, paper.dataset ? "Dataset or benchmark resources." : "Dataset link not configured yet.");
     }
   </script>
 </body>
