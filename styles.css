@@ -355,10 +355,11 @@ p {
 .thumb-link img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 8px;
   border-radius: 6px;
   border: 1px solid var(--line);
-  background: var(--soft);
+  background: var(--panel);
 }
 
 .paper-main p:last-child {
